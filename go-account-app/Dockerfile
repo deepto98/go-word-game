@@ -3,8 +3,11 @@ FROM golang:alpine as builder
 WORKDIR /go/src/app
 ENV GO111MODULE=on
 
+COPY go.mod .
+COPY go.sum .
+
 # For hot reload
-RUN go get github.com/cespare/reflex@latest
+RUN go install  github.com/cespare/reflex@latest
 
 COPY go.mod .
 COPY go.sum .

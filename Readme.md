@@ -10,7 +10,7 @@ https://gin-gonic.com/docs/examples/graceful-restart-or-stop/
 4. Ctrl+C - SIGINT, Ctrl + Z - SIGSTOP <br>
 Read about different signals : https://qr.ae/pr13KC
 5. For hot reload : https://github.com/cespare/reflex
-
+6. To route a local url to server : edit `/etc/hosts` - add line `127.0.0.1 word-game.test`
 
 
 
