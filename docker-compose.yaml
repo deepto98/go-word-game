@@ -22,6 +22,10 @@ services:
       context: ./go-account-app
       target: builder
     image: account
+    environment:
+      - ENV=dev
+    env_file:
+      - ./go-account-app/.env.dev
     expose:
       - "8000"
     labels:
@@ -29,8 +33,7 @@ services:
       - "traefik.enable=true"
       #host has to be configured - /etc/hosts - 127.0.0.1 word-game.test
       - "traefik.http.routers.account.rule=Host(`word-game.test`) && PathPrefix(`/api/account`)"
-    environment:
-      - ENV=dev
+
     volumes:
       - ./go-account-app:/go/src/app
     # have to use $$ (double-dollar) so docker doesn't try to substitute a variable
