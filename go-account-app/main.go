@@ -9,17 +9,24 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/deepto98/go-word-game/handler"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	router := gin.Default()
 
-	router.GET("/api/account", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"a": "b",
-		})
-	})
+	config := handler.Config{
+		Router: router,
+	}
+
+	handler.NewHandler(&config)
+
+	// router.GET("/api/account", func(c *gin.Context) {
+	// 	c.JSON(http.StatusOK, gin.H{
+	// 		"a": "b",
+	// 	})
+	// })
 
 	srv := &http.Server{
 		Addr:    ":8000",
