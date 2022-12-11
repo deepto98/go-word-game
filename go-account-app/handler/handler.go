@@ -4,19 +4,25 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/deepto98/go-word-game/model"
 	"github.com/gin-gonic/gin"
 )
 
-type Handler struct{}
+type Handler struct {
+	UserService model.UserService
+}
 
 type Config struct {
-	Router *gin.Engine
+	Router      *gin.Engine
+	UserService model.UserService
 }
 
 //Factory method to initialize handler with injected services and http routea
 func NewHandler(config *Config) {
 
-	handler := &Handler{}
+	handler := &Handler{
+		UserService: config.UserService,
+	}
 
 	accountGroup := config.Router.Group(os.Getenv("ACCOUNT_API_URL"))
 
@@ -31,11 +37,6 @@ func NewHandler(config *Config) {
 	accountGroup.POST("/image", handler.Image)
 	accountGroup.DELETE("/image", handler.DeleteImage)
 	accountGroup.PUT("/details", handler.Details)
-}
-
-func (handler *Handler) Me(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"hi": "Its me"})
-
 }
 
 func (handler *Handler) Signin(c *gin.Context) {

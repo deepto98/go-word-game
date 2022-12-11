@@ -13,7 +13,17 @@ Read about different signals : https://qr.ae/pr13KC
 6. To route a local url to server : edit `/etc/hosts` - add line `127.0.0.1 word-game.test`
 7. Traefik : Reverse Proxy <br>Learn: https://www.youtube.com/watch?v=wLrmmh1eI94, https://www.youtube.com/watch?v=C6IL8tjwC5E
 8. Grouping Routes: Useful for creating a parent route and sub routes, and define middleware once, for all the subroutes<br> https://chenyitian.gitbooks.io/gin-web-framework/content/docs/13.html
-9. Architecture for go-account-app : https://github.com/bxcodec/go-clean-arch
+9. Architecture for go-account-app : https://github.com/bxcodec/go-clean-arch<br>
+More about layered architecture: https://www.youtube.com/watch?v=V1a8msZ025k, https://blog.logrocket.com/flat-structure-vs-layered-architecture-structuring-your-go-app/,
+https://www.youtube.com/watch?v=oZsUhHdC7H8 
+Hex arch : https://www.youtube.com/watch?v=MpFog2kZsHk&t=2s
+
 10. Examining errors with `errors.is (compares an error to a value)` and `errors.as (function tests whether an error is a specific type and if so, converts it to that type)`<br>
 More : https://go.dev/blog/go1.13-errors, https://gosamples.dev/check-error-type/,<br> Great article about custom error handling : https://earthly.dev/blog/golang-errors/ 
-
+11.  Context in Go : carries a deadline, a cancellation signal, and other values across API boundaries.<br>
+Learn: https://www.youtube.com/watch?v=h2RdcrMLQAo, https://www.youtube.com/watch?v=kaZOXRqFPCw&t=505s, https://www.youtube.com/watch?v=mgJMIZsWfB4
+12. Type assertion in Go : if a variable a is of type interface{} or any, and its value is expected to be of a certain type, say int, that type can be asserted using `x,ok := a.(int)` <br>
+More : https://go.dev/ref/spec#Type_assertions. https://stackoverflow.com/a/24493004
+13. `gin.H` - nothing but a shortcut for ` map[string]interface{}`
+14. Testify(go get github.com/stretchr/testify) : Library for testing
+ - 
