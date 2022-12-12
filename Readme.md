@@ -26,4 +26,7 @@ Learn: https://www.youtube.com/watch?v=h2RdcrMLQAo, https://www.youtube.com/watc
 More : https://go.dev/ref/spec#Type_assertions. https://stackoverflow.com/a/24493004
 13. `gin.H` - nothing but a shortcut for ` map[string]interface{}`
 14. Testify(go get github.com/stretchr/testify) : Library for testing
+15. Creating objects with value : `a := Car{} (a is of type Car, and &a has to be explicitly used to get reference)`<br>
+    Creating objecta with reference : `a := new(Car) (a is of type *Car, can be directly passed to functions)`<br>
+    More : https://medium.com/technofunnel/golang-object-oriented-programming-f2e6448b8f24
  - 
