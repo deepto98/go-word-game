@@ -15,7 +15,7 @@ func (handler *Handler) Me(context *gin.Context) {
 
 	// c.JSON(http.StatusOK, gin.H{"hi": "Its me"})
 	if !exists {
-		log.Printf("Unable to extract user from context", context)
+		log.Printf("Unable to extract user from context %v", context)
 		err := apperrors.NewInternalError()
 		context.JSON(err.Status(), gin.H{
 			"error": err,
