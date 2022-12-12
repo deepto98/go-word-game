@@ -15,5 +15,5 @@ type UserService interface {
 //Defines methods the service layer expects
 //from any repository  it interacts with to implement
 type UserRepository interface {
-	FindById(ctx context.Context, uid uuid.UUID) (*User, error)
+	FindByID(ctx context.Context, uid uuid.UUID) (*User, error)
 }

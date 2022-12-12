@@ -23,6 +23,6 @@ func NewUserService(config *UserConfig) model.UserService {
 
 //
 func (userService *UserService) Get(ctx context.Context, uid uuid.UUID) (*model.User, error) {
-	u, err := userService.UserRepository.FindById(ctx, uid)
+	u, err := userService.UserRepository.FindByID(ctx, uid)
 	return u, err
 }
