@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/deepto98/go-word-game/model"
-	"github.com/deepto98/go-word-game/model/mocks"
-	"github.com/deepto98/go-word-game/service"
+	"github.com/deepto98/go-word-game/go-account-app/model"
+	"github.com/deepto98/go-word-game/go-account-app/model/mocks"
+	"github.com/deepto98/go-word-game/go-account-app/service"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

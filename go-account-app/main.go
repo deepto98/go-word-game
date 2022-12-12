@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/deepto98/go-word-game/handler"
+	"github.com/deepto98/go-word-game/go-account-app/handler"
 	"github.com/gin-gonic/gin"
 )
 

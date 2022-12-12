@@ -29,4 +29,5 @@ More : https://go.dev/ref/spec#Type_assertions. https://stackoverflow.com/a/2449
 15. Creating objects with value : `a := Car{} (a is of type Car, and &a has to be explicitly used to get reference)`<br>
     Creating objecta with reference : `a := new(Car) (a is of type *Car, can be directly passed to functions)`<br>
     More : https://medium.com/technofunnel/golang-object-oriented-programming-f2e6448b8f24
- - 
+16. Running tests : `go test -v ./handler/tests/`. Files should end with `_test`. <br>
+    Run all tests within subfolders: `go test -v ./...` Basics of tests: https://go.dev/doc/tutorial/add-a-test

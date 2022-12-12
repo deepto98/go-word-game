@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/deepto98/go-word-game/model"
+	"github.com/deepto98/go-word-game/go-account-app/model"
 	"github.com/gin-gonic/gin"
 )
 

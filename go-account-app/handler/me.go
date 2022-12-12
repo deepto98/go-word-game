@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/deepto98/go-word-game/model"
-	"github.com/deepto98/go-word-game/model/apperrors"
+	"github.com/deepto98/go-word-game/go-account-app/model"
+	"github.com/deepto98/go-word-game/go-account-app/model/apperrors"
 	"github.com/gin-gonic/gin"
 )
 

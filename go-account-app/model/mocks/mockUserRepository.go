@@ -3,7 +3,7 @@ package mocks
 import (
 	"context"
 
-	"github.com/deepto98/go-word-game/model"
+	"github.com/deepto98/go-word-game/go-account-app/model"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/mock"
 )

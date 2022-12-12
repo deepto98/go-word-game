@@ -1,4 +1,4 @@
-module github.com/deepto98/go-word-game
+module github.com/deepto98/go-word-game/go-account-app
 
 go 1.18
 
