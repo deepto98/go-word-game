@@ -26,3 +26,7 @@ func (userService *UserService) Get(ctx context.Context, uid uuid.UUID) (*model.
 	u, err := userService.UserRepository.FindByID(ctx, uid)
 	return u, err
 }
+
+func (userService *UserService) Signup(ctx context.Context, user *model.User) error {
+	panic("")
+}

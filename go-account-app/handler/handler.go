@@ -47,10 +47,6 @@ func (handler *Handler) Signout(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"hi": "Signed in"})
 }
 
-func (handler *Handler) Signup(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"hi": "Signed up"})
-}
-
 func (handler *Handler) Tokens(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"hi": "Signed in"})
 }
