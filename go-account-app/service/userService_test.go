@@ -1,4 +1,4 @@
-package test_service
+package service
 
 import (
 	"context"
@@ -7,7 +7,8 @@ import (
 
 	"github.com/deepto98/go-word-game/go-account-app/model"
 	"github.com/deepto98/go-word-game/go-account-app/model/mocks"
-	"github.com/deepto98/go-word-game/go-account-app/service"
+
+	// "github.com/deepto98/go-word-game/go-account-app/service"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -25,7 +26,7 @@ func TestGet(t *testing.T) {
 		}
 		mockUserRepository := new(mocks.MockUserRepository)
 
-		userService := service.NewUserService(&service.UserConfig{
+		userService := NewUserService(&UserConfig{
 			UserRepository: mockUserRepository,
 		})
 		mockUserRepository.On("FindByID", mock.Anything, uid).
@@ -45,7 +46,7 @@ func TestGet(t *testing.T) {
 
 		mockUserRepository := new(mocks.MockUserRepository)
 
-		userService := service.NewUserService(&service.UserConfig{
+		userService := NewUserService(&UserConfig{
 			UserRepository: mockUserRepository,
 		})
 		mockUserRepository.On("FindByID", mock.Anything, uid).

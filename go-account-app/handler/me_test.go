@@ -1,4 +1,4 @@
-package test_handler
+package handler
 
 import (
 	"encoding/json"
@@ -7,7 +7,6 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/deepto98/go-word-game/go-account-app/handler"
 	"github.com/deepto98/go-word-game/go-account-app/model"
 	"github.com/deepto98/go-word-game/go-account-app/model/apperrors"
 	"github.com/deepto98/go-word-game/go-account-app/model/mocks"
@@ -58,7 +57,7 @@ func TestMe(t *testing.T) {
 			})
 		})
 
-		handler.NewHandler(&handler.Config{
+		NewHandler(&Config{
 			Router:      router,
 			UserService: mockUserService,
 		})
@@ -96,7 +95,7 @@ func TestMe(t *testing.T) {
 		//Middleware to set context for test
 		router := gin.Default()
 
-		handler.NewHandler(&handler.Config{
+		NewHandler(&Config{
 			Router:      router,
 			UserService: mockUserService,
 		})
@@ -130,7 +129,7 @@ func TestMe(t *testing.T) {
 			})
 		})
 
-		handler.NewHandler(&handler.Config{
+		NewHandler(&Config{
 			Router:      router,
 			UserService: mockUserService,
 		})
