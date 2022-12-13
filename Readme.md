@@ -31,3 +31,4 @@ More : https://go.dev/ref/spec#Type_assertions. https://stackoverflow.com/a/2449
     More : https://medium.com/technofunnel/golang-object-oriented-programming-f2e6448b8f24
 16. Running tests : `go test -v ./handler/tests/`. Files should end with `_test`. <br>
     Run all tests within subfolders: `go test -v ./...` Basics of tests: https://go.dev/doc/tutorial/add-a-test
+17. For JSON struct tags go-playground validator is used in Gin, so the same rules for `validator:` can be added to `binding:`
