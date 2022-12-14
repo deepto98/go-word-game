@@ -1,8 +1,9 @@
 package mocks
 
 import (
+	"context"
+
 	"github.com/deepto98/go-word-game/go-account-app/model"
-	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/mock"
 )
 
@@ -11,7 +12,7 @@ type MockTokenService struct {
 }
 
 //Mocks NewTokenPairFromUser
-func (mockTokenService *MockTokenService) NewTokenPairFromUser(ctx *gin.Context, user *model.User, previousTokenId string) (*model.TokenPair, error) {
+func (mockTokenService *MockTokenService) NewTokenPairFromUser(ctx context.Context, user *model.User, previousTokenId string) (*model.TokenPair, error) {
 	ret := mockTokenService.Called(ctx, user, previousTokenId)
 
 	var r0 *model.TokenPair
