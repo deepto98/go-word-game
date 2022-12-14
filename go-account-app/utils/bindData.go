@@ -18,15 +18,13 @@ type InvalidArgument struct {
 // Binds an incoming request to a struct
 func BindData(ctx *gin.Context, req interface{}) bool {
 
-	err := ctx.ShouldBind(req)
-
-	if err != nil {
+	if err := ctx.ShouldBind(req); err != nil {
 		log.Printf("Error binding data: %+v\n", err)
 
 		//Check if error is a validator error
-		errors, ok := err.(validator.ValidationErrors)
 
-		if ok {
+		if errors, ok := err.(validator.ValidationErrors); ok {
+
 			var invalidArgs []InvalidArgument
 
 			for _, err := range errors {

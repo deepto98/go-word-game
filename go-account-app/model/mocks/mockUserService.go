@@ -31,7 +31,7 @@ func (m *MockUserService) Get(ctx context.Context, uid uuid.UUID) (*model.User, 
 }
 
 //mock of userService.Signup
-func (m *MockUserService) Signup(ctx context.Context, user model.User) error {
+func (m *MockUserService) Signup(ctx context.Context, user *model.User) error {
 
 	ret := m.Called(ctx, user)
 
