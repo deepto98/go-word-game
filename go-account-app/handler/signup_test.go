@@ -86,7 +86,7 @@ func TestSignup(t *testing.T) {
 	})
 
 	//3. Test for short password
-	t.Run("Invalid email", func(t *testing.T) {
+	t.Run("Short Password", func(t *testing.T) {
 
 		mockUserService := new(mocks.MockUserService)
 		mockUserService.On("Signup", mock.AnythingOfType("*gin.Context"),
