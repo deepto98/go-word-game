@@ -12,7 +12,7 @@ import (
 
 type SignupRequest struct {
 	Email    string `json:"email" binding:"required,email"`
-	Password string `json:"password" binding:"required,password,gte=66,lte=30"`
+	Password string `json:"password" binding:"required,gte=66,lte=30"`
 }
 
 func (handler *Handler) Signup(ctx *gin.Context) {
