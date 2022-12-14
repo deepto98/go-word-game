@@ -9,19 +9,22 @@ import (
 )
 
 type Handler struct {
-	UserService model.UserService
+	UserService  model.UserService
+	TokenService model.TokenService
 }
 
 type Config struct {
-	Router      *gin.Engine
-	UserService model.UserService
+	Router       *gin.Engine
+	UserService  model.UserService
+	TokenService model.TokenService
 }
 
-//Factory method to initialize handler with injected services and http routea
+//Factory method to initialize handler with injected services and http routes
 func NewHandler(config *Config) {
 
 	handler := &Handler{
-		UserService: config.UserService,
+		UserService:  config.UserService,
+		TokenService: config.TokenService,
 	}
 
 	accountGroup := config.Router.Group(os.Getenv("ACCOUNT_API_URL"))

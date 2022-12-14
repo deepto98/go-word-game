@@ -18,3 +18,9 @@ type UserService interface {
 type UserRepository interface {
 	FindByID(ctx context.Context, uid uuid.UUID) (*User, error)
 }
+
+//Defines methods the handler layer expects to interact with
+//while producing JWTs as strings
+type TokenService interface {
+	NewTokenPairFromUser(ctx context.Context, u *User, previousTokenID string) (*TokenPair, error)
+}
