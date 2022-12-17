@@ -32,3 +32,10 @@ More : https://go.dev/ref/spec#Type_assertions. https://stackoverflow.com/a/2449
 16. Running tests : `go test -v ./handler/tests/`. Files should end with `_test`. <br>
     Run all tests within subfolders: `go test -v ./...` Basics of tests: https://go.dev/doc/tutorial/add-a-test
 17. For JSON struct tags go-playground validator is used in Gin, so the same rules for `validator:` can be added to `binding:`
+18. Debate on storing access tokens: https://coolgk.medium.com/localstorage-vs-cookie-for-jwt-access-token-war-in-short-943fb23239ca<br>
+    Different authentication methods : 
+    1.     https://medium.com/@vivekmadurai/different-ways-to-authenticate-a-web-application-e8f3875c254a
+    2.     https://blog.risingstack.com/web-authentication-methods-explained/
+    3.     https://stackoverflow.com/questions/58339005/what-is-the-most-common-way-to-authenticate-a-modern-web-app
+    4.     https://www.wallarm.com/what/oauth-vs-jwt-detailed-comparison
+    5.     https://anil-pace.medium.com/json-web-tokens-vs-oauth-2-0-85dd0b32057d
