@@ -38,4 +38,6 @@ More : https://go.dev/ref/spec#Type_assertions. https://stackoverflow.com/a/2449
     2.     https://blog.risingstack.com/web-authentication-methods-explained/
     3.     https://stackoverflow.com/questions/58339005/what-is-the-most-common-way-to-authenticate-a-modern-web-app
     4.     https://www.wallarm.com/what/oauth-vs-jwt-detailed-comparison
-    5.     https://anil-pace.medium.com/json-web-tokens-vs-oauth-2-0-85dd0b32057d
+    5.     https://anil-pace.medium.com/json-web-tokens-vs-oauth-2-0-85dd0b32057`d`
+19. Salting for passwords : https://www.pingidentity.com/en/resources/blog/post/encryption-vs-hashing-vs-salting.html<br>
+Go example : https://go.dev/play/p/_Aw6WeWC42I, https://pkg.go.dev/golang.org/x/crypto/scrypt

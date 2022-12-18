@@ -28,5 +28,9 @@ func (userService *UserService) Get(ctx context.Context, uid uuid.UUID) (*model.
 }
 
 func (userService *UserService) Signup(ctx context.Context, user *model.User) error {
-	panic("")
+	if err := userService.UserRepository.Create(ctx, user); err != nil {
+		return err
+	}
+
+	return nil
 }
