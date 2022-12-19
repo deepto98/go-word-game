@@ -60,3 +60,37 @@ func TestGet(t *testing.T) {
 		mockUserRepository.AssertExpectations(t)
 	})
 }
+
+func TestSignup(t *testing.T) {
+	//Case for successful signup
+	t.Run("Success", func(t *testing.T) {
+		userId, _ := uuid.NewRandom()
+
+		mockUser := &model.User{
+			Email:    "test@test.test",
+			Password: "abcd1234",
+		}
+
+		mockUserRepository := new(mocks.MockUserRepository)
+		userService := NewUserService(&UserConfig{
+			UserRepository: mockUserRepository,
+		})
+
+		mockUserRepository.On("Create", mock.AnythingOfType("*context.emptyCtx"), mockUser).
+			Run(func(args mock.Arguments) {
+				userArg := args.Get(1).(*model.User)
+				userArg.UID = userId
+			}).Return(nil)
+
+		ctx := context.TODO()
+		err := userService.Signup(ctx, mockUser)
+
+		assert.NoError(t, err)
+
+		assert.Equal(t, userId, mockUser.UID)
+
+		mockUserRepository.AssertExpectations(t)
+
+	})
+
+}
