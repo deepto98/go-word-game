@@ -9,7 +9,7 @@ import (
 	"golang.org/x/crypto/scrypt"
 )
 
-func hashPassword(password string) (string, error) {
+func HashPassword(password string) (string, error) {
 	//-------------------
 	// Salting password
 	//-------------------
@@ -36,7 +36,8 @@ func hashPassword(password string) (string, error) {
 	return hashedPassword, nil
 }
 
-func comparePasswords(storedPassword string, suppliedPassword string) (bool, error) {
+//Check if supplied password, when salted with same salt, produces the same value
+func ComparePasswords(storedPassword string, suppliedPassword string) (bool, error) {
 	passwordSalt := strings.Split(storedPassword, ".")
 
 	//Check supplied password, salted with hash
