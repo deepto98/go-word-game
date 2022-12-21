@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	"github.com/deepto98/go-word-game/go-account-app/model"
+	"github.com/deepto98/go-word-game/go-account-app/model/apperrors"
 	"github.com/deepto98/go-word-game/go-account-app/model/mocks"
 
 	// "github.com/deepto98/go-word-game/go-account-app/service"
@@ -93,4 +94,29 @@ func TestSignup(t *testing.T) {
 
 	})
 
+	//Test case for unsuccessful signup
+	t.Run("Error", func(t *testing.T) {
+		mockUser := &model.User{
+			Email:    "test@test.test",
+			Password: "abcd1234",
+		}
+
+		mockUserRepository := new(mocks.MockUserRepository)
+
+		userService := NewUserService(&UserConfig{
+			UserRepository: mockUserRepository,
+		})
+
+		mockError := apperrors.NewConflictError("email", mockUser.Email)
+
+		mockUserRepository.On("Create", mock.AnythingOfType("*context.emptyCtx"), mockUser).
+			Return(mockError)
+
+		ctx := context.TODO()
+		err := userService.Signup(ctx, mockUser)
+
+		assert.EqualError(t, err, mockError.Error())
+
+		mockUserRepository.AssertExpectations(t)
+	})
 }
