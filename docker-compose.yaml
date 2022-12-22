@@ -29,12 +29,28 @@ services:
     expose:
       - "8000"
     labels:
-    # specifies that this container is enabled for traefik
+      # specifies that this container is enabled for traefik
       - "traefik.enable=true"
       #host has to be configured - /etc/hosts - 127.0.0.1 word-game.test
       - "traefik.http.routers.account.rule=Host(`word-game.test`) && PathPrefix(`/api/account`)"
 
     volumes:
       - ./go-account-app:/go/src/app
+    depends_on:
+      - postgres-auth
     # have to use $$ (double-dollar) so docker doesn't try to substitute a variable
     command: reflex -r "\.go$$" -s -- sh -c "go run ./"
+  postgres-auth:
+    image: "postgres:alpine"
+    environment:
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    # Set a volume for data and initial sql script 
+    # May configure initial db for future demo 
+    volumes:
+      - "pgdata_auth:/var/lib/postgresql/data"
+      # - ./init:/docker-entrypoint-initdb.d/ 
+    command: [ "postgres", "-c", "log_statement=all" ]
+volumes:
+  pgdata_auth:
