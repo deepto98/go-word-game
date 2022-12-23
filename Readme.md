@@ -41,3 +41,4 @@ More : https://go.dev/ref/spec#Type_assertions. https://stackoverflow.com/a/2449
     5.     https://anil-pace.medium.com/json-web-tokens-vs-oauth-2-0-85dd0b32057`d`
 19. Salting for passwords : https://www.pingidentity.com/en/resources/blog/post/encryption-vs-hashing-vs-salting.html<br>
 Go example : https://go.dev/play/p/_Aw6WeWC42I, https://pkg.go.dev/golang.org/x/crypto/scrypt
+20. How JWTs work : https://jwt.io/introduction
